@@ -16,11 +16,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ActorSystem<String> bigPrimes = ActorSystem.create(ManagerBahaviour.create(),"Manager");
-        bigPrimes.tell("start");
+        ActorSystem<ManagerBahaviour.Command> bigPrimes = ActorSystem.create(ManagerBahaviour.create(),"Manager");
+
+        bigPrimes.tell(new ManagerBahaviour.IntructionCommand("start"));
 
     }
-
 
 //    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
 }
